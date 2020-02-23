@@ -45,16 +45,23 @@ export declare enum DeviceStatus {
     ENABLED = 'ENABLED',
     DISABLED = 'DISABLED',
 }
+export interface DeviceAttributes {
+    deviceClass: DeviceClass
+    model: string
+    name: string
+    platform: BundleIdPlatform
+    status: DeviceStatus
+    udid: string
+    addedDate: DateTime
+}
+/**
+ * The data structure that represents the resource.
+ */
 export interface Device {
-    attributes: {
-        deviceClass: DeviceClass
-        model: string
-        name: string
-        platform: BundleIdPlatform
-        status: DeviceStatus
-        udid: string
-        addedDate: DateTime
-    }
+    /**
+     * The resource's attributes.
+     */
+    attributes: DeviceAttributes
     /**
      * The opaque resource ID that uniquely identifies the resource.
      */

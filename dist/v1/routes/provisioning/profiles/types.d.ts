@@ -64,6 +64,16 @@ export declare type ProfilesType =
     | 'profileState'
     | 'profileType'
     | 'uuid'
+export interface ProfileAttributes {
+    name?: string
+    platform?: BundleIdPlatform
+    profileContent?: string
+    uuid?: string
+    createdDate?: DateTime
+    profileState?: ProfileState
+    profileType?: ProfileType
+    expirationDate: DateTime
+}
 export interface Profile {
     /**
      * (Required) The opaque resource ID that uniquely identifies the resource
@@ -80,16 +90,7 @@ export interface Profile {
     /**
      * The resource's attributes.
      */
-    attributes: {
-        name?: string
-        platform?: BundleIdPlatform
-        profileContent?: string
-        uuid?: string
-        createdDate?: DateTime
-        profileState?: ProfileState
-        profileType?: ProfileType
-        expirationDate: DateTime
-    }
+    attributes: ProfileAttributes
     /**
      * Navigational links to related data and included resource types and IDs.
      */
