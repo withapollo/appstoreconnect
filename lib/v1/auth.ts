@@ -4,7 +4,7 @@ const jwtOptions = (iss: string, kid: string) => ({
     algorithm: 'ES256',
     keyid: kid,
     audience: 'appstoreconnect-v1',
-    expiresIn: 1200,
+    expiresIn: 500,
     issuer: iss,
 })
 
